@@ -5,10 +5,12 @@ var userName;
 var score = 0;
 var resultsElement = document.getElementById('results');
 
+//Introductory alert
 alert('Hello and welcome to my site! While here, you\'ll get a chance to learn a little bit about me though an interactive promt.');
 
 response = prompt('Are you ready to begin? \n Y or N').toUpperCase();
 
+//Main if statement
 if(response === 'Y') {
   userName = prompt('Awesome! First, what is your name?');
   alert(userName + ', let\'s get started!');
