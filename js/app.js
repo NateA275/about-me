@@ -5,24 +5,37 @@ var userName;
 var score = 0;
 var counter = 0;
 var guessNumber = Math.floor(Math.random()* 10 + 1); //Generates a random number between [1, 10]
+
+var dataTypes = ['boolean', 'null', 'undefined', 'number', 'string', 'symbol'];
+var MAX_ATTEMPTS = 6;
+var correctAnswers = [];
+var attempts = 0;
+
 var introElement = document.getElementById('intro');
-var nameElement = document.getElementById('userName');
 var quizElement = document.getElementById('quizResults');
 var guessElement = document.getElementById('guessGameResults');
+var dataTypeElement = document.getElementById('dataTypeResults');
 
-//Introductory alert
+
+/**
+ * Main introduction
+ */
 alert('Hello and welcome to my site! While here, you\'ll get a chance to learn a little bit about me though an interactive promt.');
 
 response = prompt('Are you ready to begin? \n Y or N').toUpperCase();
 
-//Main if statement
+/**
+ * Main if statement
+ */
 if(response === 'Y') {
   userName = prompt('Awesome! First, what is your name?');
   alert(userName + ', let\'s get started!');
   console.log('User: ' + userName);
   response = '';
 
-
+  // /**
+  //  * All 5 yes or no questions
+  //  */
   response = prompt('Question 1:\nHave I lived in Seattle for more than three years?\n Y or N').toUpperCase();
   if(response === 'N') {
     score++;
@@ -83,7 +96,9 @@ if(response === 'Y') {
   response = '';
 
 
-  /*Guess a Number Game*/
+  /**
+   * Number guessing game
+   */
   response = parseInt(prompt('Guess a random whole number between 1 and 10 inclusively.'));
   counter++;
 
@@ -100,27 +115,46 @@ if(response === 'Y') {
 
   if(counter === 1) {
     alert('Wow! You guessed it on your first attempt!');
+  } else {
+    alert('You guessed the correct number in ' + counter + ' attempts.');
   }
 
 
+  /**
+   * Guess Primitive Data Types in JavaScript
+   */
+  alert('Do you think you can guess all six of the primitive data types in JavaScript? Let\'s give it a shot!');
+  response = '';
+  while(correctAnswers.length < MAX_ATTEMPTS && attempts < MAX_ATTEMPTS) {
+    response = prompt('Enter a primitive type: \n' + attempts + '/6 attempts\n' + correctAnswers).toLowerCase();
+    for(var i = 0; i < dataTypes.length; i++) {
+      if(response === dataTypes[i]) {
+        correctAnswers.push(' ' + response);
+        dataTypes.splice(i, 1);
+      }
+    }
+    attempts++;
+  }
 
+  if(correctAnswers.length === MAX_ATTEMPTS) {
+    alert('Nice! You got all six primitive types!');
+  } else {
+    alert('You got ' + correctAnswers.length + ' correct.');
+  }
 
-
-
-
-  /*Present Scores to User*/
+  /**
+   * Outputting results to user
+   */
   introElement.textContent = ('Thanks for playing, ' + userName + '. Take a moment to check out your results a read a little bit more about me.');
-  nameElement.textContent = ('Results:');
   quizElement.textContent = ('-You guessed ' + score + '/5 questions about me correctly.');
   guessElement.textContent = ('-You guessed my random number in ' + counter + ' attempts.');
+  dataTypeElement.textContent = ('-You guessed ' + correctAnswers.length + ' out of 6 JavaScript primitive data types.');  
 
-
+/**
+ * Exception handling
+ */
 } else if (response === 'N') {
-
   alert('Ok, just refresh the page when you\'re ready!');
-
 } else {
-
   alert('Please use Y or N. Refresh to restart.');
-
 }
