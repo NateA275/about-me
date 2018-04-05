@@ -20,7 +20,7 @@ var dataTypeElement = document.getElementById('dataTypeResults');
 /**
  * Main introduction
  */
-alert('Hello and welcome to my site! While here, you\'ll get a chance to learn a little bit about me though an interactive promt.');
+alert('Hello and welcome to my site! While here, you\'ll get a chance to learn a little bit about me and also get a chance to check out my hard work!.');
 
 response = prompt('Are you ready to begin? \n Y or N').toUpperCase();
 
@@ -33,113 +33,122 @@ if(response === 'Y') {
   console.log('User: ' + userName);
   response = '';
 
-  // /**
-  //  * All 5 yes or no questions
-  //  */
-  response = prompt('Question 1:\nHave I lived in Seattle for more than three years?\n Y or N').toUpperCase();
-  if(response === 'N') {
-    score++;
-    alert('Thats right! This summer will mark 3 years since I moved to Seattle.\n\nScore: ' + score + '/5');
-  } else if (response === 'Y') {
-    alert('Not quite! This summer will mark 3 years since I moved to Seattle.\n\nScore: ' + score + '/5');
-  } else {
-    alert('Please use Y or N');
-  }
-  response = '';
+  response = prompt('The first game we can play is a short quiz about me, want to play? \n Y or N').toUpperCase();
+  if (response === 'Y') {
 
-
-  response = prompt('Question 2:\nDo you think I prefer dogs over cats?\n Y or N').toUpperCase();
-  if(response === 'Y') {
-    score++;
-    alert('Thats right! I love dogs. I have a 3 year old Belgian Malinois named Lily. She looooves playing fetch.\n\nScore: ' + score + '/5');
-  } else if (response === 'N'){
-    alert('Not quite! I love dogs. I have a 3 year old Belgian Malinois named Lily. She looooves playing fetch.\n\nScore: ' + score + '/5');
-  } else {
-    alert('Please use Y or N');
-  }
-  response = '';
-
-
-  response = prompt('Question 3:\nDid I used to be a DJ?\n Y or N').toUpperCase();
-  if(response === 'N') {
-    score++;
-    alert('Thats right! Unfortunately, I can\'t say that I have much musical talent.\n\nScore: ' + score + '/5');
-  } else if (response === 'Y'){
-    alert('That would be cool, but unfortunatly I can\'t say I have much musical talent.\n\nScore: ' + score + '/5');
-  } else {
-    alert('Please use Y or N');
-  }
-  response = '';
-
-
-  response = prompt('Question 4:\nWas Computer Programming my favorite subject in high school?\n Y or N').toUpperCase();
-  if(response === 'N') {
-    score++;
-    alert('Thats right! Can you believe Computer Programming wasn\'t even an option I had in high school?\n\nScore: ' + score + '/5');
-  } else if (response === 'Y'){
-    alert('Nope. Can you believe Computer Programming wasn\'t even an option I had in high school?\n\nScore: ' + score + '/5');
-  } else {
-    alert('Please use Y or N');
-  }
-  response = '';
-
-
-  response = prompt('Question 5:\nAm I a twin?\n Y or N').toUpperCase();
-  if(response === 'N') {
-    score++;
-    alert('Thats right! I do have two siblings, but neither is my twin.\n\nScore: ' + score + '/5');
-  } else if (response === 'Y') {
-    alert('Nope. I do have two siblings, but neither is my twin.\n\nScore: ' + score + '/5');
-  } else {
-    alert('Please use Y or N');
-  }
-  response = '';
-
-
-  /**
-   * Number guessing game
-   */
-  response = parseInt(prompt('Guess a random whole number between 1 and 10 inclusively.'));
-  counter++;
-
-  while(response !== guessNumber) {
-    counter++;
-    if(response > guessNumber) {
-      response = parseInt(prompt('Nope. Your guess is too high. \n Try again!'));
-    } else if(response < guessNumber) {
-      response = parseInt(prompt('Nope, that guess is too low. \n Try again'));
+    // /**
+    //  * All 5 yes or no questions
+    //  */
+    response = prompt('Question 1:\nHave I lived in Seattle for more than three years?\n Y or N').toUpperCase();
+    if (response === 'N') {
+      score++;
+      alert('Thats right! This summer will mark 3 years since I moved to Seattle.\n\nScore: ' + score + '/5');
+    } else if (response === 'Y') {
+      alert('Not quite! This summer will mark 3 years since I moved to Seattle.\n\nScore: ' + score + '/5');
     } else {
-      response = parseInt(prompt('Please enter an integer between 1 and 10'));
+      alert('Please use Y or N');
     }
+    response = '';
+
+
+    response = prompt('Question 2:\nDo you think I prefer dogs over cats?\n Y or N').toUpperCase();
+    if (response === 'Y') {
+      score++;
+      alert('Thats right! I love dogs. I have a 3 year old Belgian Malinois named Lily. She looooves playing fetch.\n\nScore: ' + score + '/5');
+    } else if (response === 'N') {
+      alert('Not quite! I love dogs. I have a 3 year old Belgian Malinois named Lily. She looooves playing fetch.\n\nScore: ' + score + '/5');
+    } else {
+      alert('Please use Y or N');
+    }
+    response = '';
+
+
+    response = prompt('Question 3:\nDid I used to be a DJ?\n Y or N').toUpperCase();
+    if (response === 'N') {
+      score++;
+      alert('Thats right! Unfortunately, I can\'t say that I have much musical talent.\n\nScore: ' + score + '/5');
+    } else if (response === 'Y') {
+      alert('That would be cool, but unfortunatly I can\'t say I have much musical talent.\n\nScore: ' + score + '/5');
+    } else {
+      alert('Please use Y or N');
+    }
+    response = '';
+
+
+    response = prompt('Question 4:\nWas Computer Programming my favorite subject in high school?\n Y or N').toUpperCase();
+    if (response === 'N') {
+      score++;
+      alert('Thats right! Can you believe Computer Programming wasn\'t even an option I had in high school?\n\nScore: ' + score + '/5');
+    } else if (response === 'Y') {
+      alert('Nope. Can you believe Computer Programming wasn\'t even an option I had in high school?\n\nScore: ' + score + '/5');
+    } else {
+      alert('Please use Y or N');
+    }
+    response = '';
+
+
+    response = prompt('Question 5:\nAm I a twin?\n Y or N').toUpperCase();
+    if (response === 'N') {
+      score++;
+      alert('Thats right! I do have two siblings, but neither is my twin.\n\nScore: ' + score + '/5');
+    } else if (response === 'Y') {
+      alert('Nope. I do have two siblings, but neither is my twin.\n\nScore: ' + score + '/5');
+    } else {
+      alert('Please use Y or N');
+    }
+    response = '';
   }
 
-  if(counter === 1) {
-    alert('Wow! You guessed it on your first attempt!');
-  } else {
-    alert('You guessed the correct number in ' + counter + ' attempts.');
-  }
+  response = prompt('The next game we can play is a number guessing game, want to play? \n Y or N').toUpperCase();
+  if (response === 'Y') {
 
+    /**
+     * Number guessing game
+    */
+    response = parseInt(prompt('Guess a random whole number between 1 and 10 inclusively.'));
+    counter++;
 
-  /**
-   * Guess Primitive Data Types in JavaScript
-   */
-  alert('Do you think you can guess all six of the primitive data types in JavaScript? Let\'s give it a shot!');
-  response = '';
-  while(correctAnswers.length < MAX_ATTEMPTS && attempts < MAX_ATTEMPTS) {
-    response = prompt('Enter a primitive type: \n' + attempts + '/6 attempts\n' + correctAnswers).toLowerCase();
-    for(var i = 0; i < dataTypes.length; i++) {
-      if(response === dataTypes[i]) {
-        correctAnswers.push(' ' + response);
-        dataTypes.splice(i, 1);
+    while(response !== guessNumber) {
+      counter++;
+      if(response > guessNumber) {
+        response = parseInt(prompt('Nope. Your guess is too high. \n Try again!'));
+      } else if(response < guessNumber) {
+        response = parseInt(prompt('Nope, that guess is too low. \n Try again'));
+      } else {
+        response = parseInt(prompt('Please enter an integer between 1 and 10'));
       }
     }
-    attempts++;
+
+    if(counter === 1) {
+      alert('Wow! You guessed it on your first attempt!');
+    } else {
+      alert('You guessed the correct number in ' + counter + ' attempts.');
+    }
   }
 
-  if(correctAnswers.length === MAX_ATTEMPTS) {
-    alert('Nice! You got all six primitive types!');
-  } else {
-    alert('You got ' + correctAnswers.length + ' correct.');
+  response = prompt('The last game we can play is a JavaScript quiz. Want to play? \n Y or N').toUpperCase();
+  if (response === 'Y') {
+    /**
+     * Guess Primitive Data Types in JavaScript
+     */
+    alert('Do you think you can guess all six of the primitive data types in JavaScript? Let\'s give it a shot!');
+    response = '';
+    while(correctAnswers.length < MAX_ATTEMPTS && attempts < MAX_ATTEMPTS) {
+      response = prompt('Enter a primitive type: \n' + attempts + '/6 attempts\n' + correctAnswers).toLowerCase();
+      for(var i = 0; i < dataTypes.length; i++) {
+        if(response === dataTypes[i]) {
+          correctAnswers.push(' ' + response);
+          dataTypes.splice(i, 1);
+        }
+      }
+      attempts++;
+    }
+
+    if(correctAnswers.length === MAX_ATTEMPTS) {
+      alert('Nice! You got all six primitive types!');
+    } else {
+      alert('You got ' + correctAnswers.length + ' correct.');
+    }
   }
 
   /**
