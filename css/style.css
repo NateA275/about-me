@@ -59,7 +59,8 @@ h1 {
 #lilyPic {
   display: inline-block;
   width: 300px;
-  border-radius: 20px;
+  margin-top: 20px;
+  border-radius: 30px;
 }
 
 .column {

@@ -16,29 +16,29 @@ var quizElement = document.getElementById('quizResults');
 var guessElement = document.getElementById('guessGameResults');
 var dataTypeElement = document.getElementById('dataTypeResults');
 
-
 /**
  * Main introduction
  */
 alert('Hello and welcome to my site! While here, you\'ll get a chance to learn a little bit about me and also get a chance to check out my hard work!.');
 
-response = prompt('Are you ready to begin? \n Y or N').toUpperCase();
+response = confirm('Are you ready to begin?');
 
 /**
  * Main if statement
  */
-if(response === 'Y') {
+if(response) {
   userName = prompt('Awesome! First, what is your name?');
   alert(userName + ', let\'s get started!');
   console.log('User: ' + userName);
   response = '';
 
-  response = prompt('The first game we can play is a short quiz about me, want to play? \n Y or N').toUpperCase();
-  if (response === 'Y') {
+  // /**
+  //  * Yes-or-No Quiz Game
+  //  */
+  response = confirm('The first game we can play is a short quiz about me, want to play?');
+  if (response) {
 
-    // /**
-    //  * All 5 yes or no questions
-    //  */
+    //Question 1
     response = prompt('Question 1:\nHave I lived in Seattle for more than three years?\n Y or N').toUpperCase();
     if (response === 'N') {
       score++;
@@ -50,7 +50,7 @@ if(response === 'Y') {
     }
     response = '';
 
-
+    //Question 2
     response = prompt('Question 2:\nDo you think I prefer dogs over cats?\n Y or N').toUpperCase();
     if (response === 'Y') {
       score++;
@@ -62,7 +62,7 @@ if(response === 'Y') {
     }
     response = '';
 
-
+    //Question 3
     response = prompt('Question 3:\nDid I used to be a DJ?\n Y or N').toUpperCase();
     if (response === 'N') {
       score++;
@@ -74,7 +74,7 @@ if(response === 'Y') {
     }
     response = '';
 
-
+    //Question 4
     response = prompt('Question 4:\nWas Computer Programming my favorite subject in high school?\n Y or N').toUpperCase();
     if (response === 'N') {
       score++;
@@ -86,7 +86,7 @@ if(response === 'Y') {
     }
     response = '';
 
-
+    //Question 5
     response = prompt('Question 5:\nAm I a twin?\n Y or N').toUpperCase();
     if (response === 'N') {
       score++;
@@ -97,14 +97,17 @@ if(response === 'Y') {
       alert('Please use Y or N');
     }
     response = '';
+
+    alert('You scored ' + score + '/5'); //Output result to user
+    console.log('About me quiz: ' + score + '/5'); //Output result to console
   }
 
-  response = prompt('The next game we can play is a number guessing game, want to play? \n Y or N').toUpperCase();
-  if (response === 'Y') {
+  /**
+   * Number guessing game
+  */
+  response = confirm('The next game we can play is a number guessing game, want to play?');
+  if (response) {
 
-    /**
-     * Number guessing game
-    */
     response = parseInt(prompt('Guess a random whole number between 1 and 10 inclusively.'));
     counter++;
 
@@ -119,18 +122,21 @@ if(response === 'Y') {
       }
     }
 
+    //Output result to user
     if(counter === 1) {
       alert('Wow! You guessed it on your first attempt!');
     } else {
       alert('You guessed the correct number in ' + counter + ' attempts.');
     }
+    console.log('Number guessing: ' + counter + ' attempts'); //Output result to console
   }
 
-  response = prompt('The last game we can play is a JavaScript quiz. Want to play? \n Y or N').toUpperCase();
-  if (response === 'Y') {
-    /**
-     * Guess Primitive Data Types in JavaScript
-     */
+  /**
+   * Guess Primitive Data Types in JavaScript
+   */
+  response = confirm('The last game we can play is a JavaScript quiz. Want to play?');
+  if (response) {
+
     alert('Do you think you can guess all six of the primitive data types in JavaScript? Let\'s give it a shot!');
     response = '';
     while(correctAnswers.length < MAX_ATTEMPTS && attempts < MAX_ATTEMPTS) {
@@ -144,26 +150,26 @@ if(response === 'Y') {
       attempts++;
     }
 
+    //Output results to user
     if(correctAnswers.length === MAX_ATTEMPTS) {
       alert('Nice! You got all six primitive types!');
     } else {
       alert('You got ' + correctAnswers.length + ' correct.');
     }
+    console.log('JavaScript quiz: ' + correctAnswers.length + ' correct');
   }
 
   /**
-   * Outputting results to user
+   * Outputting results to site
    */
   introElement.textContent = ('Thanks for playing, ' + userName + '.');
   quizElement.textContent = ('-You guessed ' + score + '/5 questions about me correctly.');
   guessElement.textContent = ('-You guessed my random number in ' + counter + ' attempts.');
-  dataTypeElement.textContent = ('-You guessed ' + correctAnswers.length + ' out of 6 JavaScript primitive data types.');  
+  dataTypeElement.textContent = ('-You guessed ' + correctAnswers.length + ' out of 6 JavaScript primitive data types.');
 
 /**
  * Exception handling
  */
-} else if (response === 'N') {
-  alert('Ok, just refresh the page when you\'re ready!');
 } else {
-  alert('Please use Y or N. Refresh to restart.');
+  alert('Ok, just refresh the page when you\'re ready!');
 }
