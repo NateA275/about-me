@@ -11,7 +11,7 @@ var MAX_ATTEMPTS = 6;
 var correctAnswers = [];
 var attempts = 0;
 
-var introElement = document.getElementById('intro');
+var introElement = document.getElementById('results');
 var quizElement = document.getElementById('quizResults');
 var guessElement = document.getElementById('guessGameResults');
 var dataTypeElement = document.getElementById('dataTypeResults');
@@ -154,7 +154,7 @@ if(response === 'Y') {
   /**
    * Outputting results to user
    */
-  introElement.textContent = ('Thanks for playing, ' + userName + '. Take a moment to check out your results a read a little bit more about me.');
+  introElement.textContent = ('Thanks for playing, ' + userName + '.');
   quizElement.textContent = ('-You guessed ' + score + '/5 questions about me correctly.');
   guessElement.textContent = ('-You guessed my random number in ' + counter + ' attempts.');
   dataTypeElement.textContent = ('-You guessed ' + correctAnswers.length + ' out of 6 JavaScript primitive data types.');  
