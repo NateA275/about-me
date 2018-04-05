@@ -1,15 +1,15 @@
 'use strict';
 
-var response;
-var userName;
-var score = 0;
-var counter = 0;
+var response; //Gets latest user response
+var userName; //Gets user name
+var score = 0; //Gets score of Yes-or-No game
+var counter = 0; //Gets # of attempts of Number Guessing game
 var guessNumber = Math.floor(Math.random()* 10 + 1); //Generates a random number between [1, 10]
 
-var dataTypes = ['boolean', 'null', 'undefined', 'number', 'string', 'symbol'];
-var MAX_ATTEMPTS = 6;
-var correctAnswers = [];
-var attempts = 0;
+var dataTypes = ['boolean', 'null', 'undefined', 'number', 'string', 'symbol']; //Correct answers to JavaScript quiz
+var MAX_ATTEMPTS = 6; //Maximum number of allowed attempts for JavaScript quiz
+var correctAnswers = []; //Gets correct answers from user
+var attempts = 0; //Gets number of accumulated attempts in JavaScript quiz
 
 var introElement = document.getElementById('results');
 var quizElement = document.getElementById('quizResults');
@@ -104,7 +104,7 @@ if(response) {
 
   /**
    * Number guessing game
-  */
+   */
   response = confirm('The next game we can play is a number guessing game, want to play?');
   if (response) {
 
@@ -137,7 +137,7 @@ if(response) {
   response = confirm('The last game we can play is a JavaScript quiz. Want to play?');
   if (response) {
 
-    alert('Do you think you can guess all six of the primitive data types in JavaScript? Let\'s give it a shot!');
+    alert('Do you think you can guess all six of the primitive data types in JavaScript? Give it a shot!');
     response = '';
     while(correctAnswers.length < MAX_ATTEMPTS && attempts < MAX_ATTEMPTS) {
       response = prompt('Enter a primitive type: \n' + attempts + '/6 attempts\n' + correctAnswers).toLowerCase();
@@ -154,9 +154,9 @@ if(response) {
     if(correctAnswers.length === MAX_ATTEMPTS) {
       alert('Nice! You got all six primitive types!');
     } else {
-      alert('You got ' + correctAnswers.length + ' correct.');
+      alert('You got ' + correctAnswers.length + ' correct.\nYou forgot about:\n' + dataTypes.toString());
     }
-    console.log('JavaScript quiz: ' + correctAnswers.length + ' correct');
+    console.log('JavaScript quiz: ' + correctAnswers.length + ' correct.');
   }
 
   /**
