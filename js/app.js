@@ -6,7 +6,8 @@
 var response; //Contains latest user response
 var userName; //Gets user name
 var score = 0; //Gets score of Yes-or-No game
-var counter = 0; //Gets # of attempts of Number Guessing game
+var message; //Gets Question output
+var counter = 0; //Gets # of attempts for Number Guess
 var randomNum = Math.floor(Math.random()*10 + 1); //Generates random number in range [1, 10]
 
 var dataTypes = ['boolean', 'null', 'undefined', 'number', 'string', 'symbol']; //Correct answers to JavaScript quiz
@@ -30,7 +31,7 @@ if(confirm('Hello and welcome to my site!\n\nWhile here, you can learn a little 
 
   introElement.textContent = ('Thanks for playing, ' + userName);
 
-  if (confirm(userName + ', the first game I have is a guessing game about me! Want to play?')) {
+  if (confirm(userName + ', the first game I have to show you is a guessing game about me! Want to play?')) {
     guessAboutMe();
     quizElement.textContent = ('-You guessed ' + score + '/5 questions about me correctly.');
   }
@@ -44,7 +45,7 @@ if(confirm('Hello and welcome to my site!\n\nWhile here, you can learn a little 
     jsQuiz();
     dataTypeElement.textContent = ('-You guessed ' + correctAnswers.length + ' out of 6 JavaScript primitive data types.');
   }
- 
+
 } else {
   alert('Ok, just hit refresh if you want to try them out!.');
 }
@@ -54,65 +55,72 @@ if(confirm('Hello and welcome to my site!\n\nWhile here, you can learn a little 
 **************************************/
 function guessAboutMe() {
   //Question 1
+  message = 'I will have lived in Seattle for three years this September.\nI originally moved here for school, but have since decided that I want to learn to code.';
+
   do {
     response = prompt('Question 1:\nHave I lived in Seattle for more than three years?\n Y or N').toUpperCase();
     if (response === 'N') {
       score++;
-      alert('Thats right! This summer will mark 3 years since I moved to Seattle.\n\nScore: ' + score + '/5');
+      alert('Thats right!\n' + message + '\n\nScore: ' + score + '/5');
     } else if (response === 'Y') {
-      alert('Not quite! This summer will mark 3 years since I moved to Seattle.\n\nScore: ' + score + '/5');
+      alert('Not quite!\n' + message + '\n\nScore: ' + score + '/5');
     } else {
       alert('Please use \'Y\' or \'N\'');
     }
   } while(response !== 'Y' && response !== 'N');
 
   //Question 2
+  message = 'I love dogs. I have a 3 year old Belgian Malinois named Lily. Fetch is her number one priority.\nI guess you could say... \'ball is life.\'';
+
   do {
     response = prompt('Question 2:\nDo you think I prefer dogs over cats?\n Y or N').toUpperCase();
     if (response === 'Y') {
       score++;
-      alert('Thats right! I love dogs. I have a 3 year old Belgian Malinois named Lily. She looooves playing fetch.\n\nScore: ' + score + '/5');
+      alert('Thats right!\n' + message + '\n\nScore: ' + score + '/5');
     } else if (response === 'N') {
-      alert('Not quite! I love dogs. I have a 3 year old Belgian Malinois named Lily. She looooves playing fetch.\n\nScore: ' + score + '/5');
+      alert('No Way!\n' + message + '\n\nScore: ' + score + '/5');
     } else {
       alert('Please use Y or N');
     }
   } while(response !== 'Y' && response !== 'N');
 
   //Question 3
+  message = 'Unfortunately I can\'t say I have much musical talent.\nI do however have a pretty unique skillset coming from a background in military Special Operations, road construction, and software development!';
   do {
     response = prompt('Question 3:\nDid I used to be a DJ?\n Y or N').toUpperCase();
     if (response === 'N') {
       score++;
-      alert('Thats right! Unfortunately, I can\'t say that I have much musical talent.\n\nScore: ' + score + '/5');
+      alert('Thats right!\n' + message + '\n\nScore: ' + score + '/5');
     } else if (response === 'Y') {
-      alert('That would be cool, but unfortunatly I can\'t say I have much musical talent.\n\nScore: ' + score + '/5');
+      alert('That would be cool, but no.' + message + '\n\nScore: ' + score + '/5');
     } else {
       alert('Please use Y or N');
     }
   } while(response !== 'Y' && response !== 'N');
 
   //Question 4
+  message = 'Can you believe Computer Programming wasn\'t even offered in my High School?\nLuckily, I beleive that the best time to learn something was yesterday. The second best time is now.';
   do {
     response = prompt('Question 4:\nWas Computer Programming my favorite subject in high school?\n Y or N').toUpperCase();
     if (response === 'N') {
       score++;
-      alert('Thats right! Can you believe Computer Programming wasn\'t even an option I had in high school?\n\nScore: ' + score + '/5');
+      alert('Thats right!\n' + message + '\n\nScore: ' + score + '/5');
     } else if (response === 'Y') {
-      alert('Nope. Can you believe Computer Programming wasn\'t even an option I had in high school?\n\nScore: ' + score + '/5');
+      alert('Nope.\n' + message + '\n\nScore: ' + score + '/5');
     } else {
       alert('Please use Y or N');
     }
   } while(response !== 'Y' && response !== 'N');
 
   //Question 5
+  message = 'I\'m not a twin, but my grandmother, my wife, and her grandmother all are.\nThe doctors tell us that our daughter - who will be born this June - doesn\'t have a twin, but I\'ll believe it when I see it.';
   do {
     response = prompt('Question 5:\nAm I a twin?\n Y or N').toUpperCase();
     if (response === 'N') {
       score++;
-      alert('Thats right! I do have two siblings, but neither is my twin.\n\nScore: ' + score + '/5');
+      alert('Thats right!\n' + message + '\n\nScore: ' + score + '/5');
     } else if (response === 'Y') {
-      alert('Nope. I do have two siblings, but neither is my twin.\n\nScore: ' + score + '/5');
+      alert('Nope.\n' + message + '\n\nScore: ' + score + '/5');
     } else {
       alert('Please use Y or N');
     }
@@ -130,7 +138,7 @@ function guessNumber() {
   response = parseInt(prompt('Guess a random number between 1 and 10.'));
   counter++;
 
-  while(response !== randomNum && counter < MAX_ATTEMPTS) {
+  while(response !== randomNum) {
     counter++;
     if(response > randomNum) {
       response = parseInt(prompt('Answer too high. Try again:'));
@@ -143,12 +151,9 @@ function guessNumber() {
 
   //Output results
   if(counter === 1) {
-    alert('First try!');
-  } else if(counter === MAX_ATTEMPTS) {
-    alert('You ran out of attmpts. The right answer was ' + randomNum);
-    console.log('Number guess: failed');
+    alert('Wow, first try!');
   } else {
-    alert('You got it in ' + counter + ' attempts.');
+    alert('The answer was ' + randomNum + '.\nYou got it in ' + counter + ' attempts.');
     console.log('Number guess: ' + counter + ' attempts' );
   }
 }
@@ -160,11 +165,9 @@ function jsQuiz() {
   alert('Do you think you can guess all six of the primitive data types in JavaScript? Give it a shot!');
   do{
     response = prompt('Enter a primitive type: \n' + attempts + '/6 attempts\n' + correctAnswers).toLowerCase();
-    for(var i = 0; i < dataTypes.length; i++) {
-      if(response === dataTypes[i]) {
-        correctAnswers.push(' ' + response);
-        dataTypes.splice(i, 1);
-      }
+    if(dataTypes.includes(response)) {
+      correctAnswers.push(' ' + response);
+      dataTypes.splice(dataTypes.indexOf(response), 1);
     }
     attempts++;
   } while (correctAnswers.length < MAX_ATTEMPTS && attempts < MAX_ATTEMPTS);
