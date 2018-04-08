@@ -16,10 +16,10 @@ var correctAnswers = []; //Gets correct answers from user
 var attempts = 0; //Gets number of accumulated attempts in JavaScript quiz
 
 //Display variables
-var introElement = document.getElementById('results');
-var quizElement = document.getElementById('quizResults');
-var guessElement = document.getElementById('guessGameResults');
-var dataTypeElement = document.getElementById('dataTypeResults');
+var greetingElement = document.getElementById('splashGreeting');
+var aboutMeElement = document.getElementById('aboutMeResults');
+var guessGameElement = document.getElementById('guessGameResults');
+var jsQuizElement = document.getElementById('jsQuizResults');
 
 
 /**************************************
@@ -29,21 +29,24 @@ if(confirm('Hello and welcome to my site!\n\nWhile here, you can learn a little 
 
   userName = prompt('Good choice. First, what is your name?');
   console.log('User: ' + userName);
-  introElement.textContent = ('Thanks for playing, ' + userName);
+  greetingElement.textContent = ('Thanks for playing, ' + userName);
 
   if (confirm(userName + ', the first game I have to show you is a guessing game about me! Want to play?')) {
+    console.log('User wants to play About Me');
     guessAboutMe();
-    quizElement.textContent = ('-You guessed ' + score + '/5 questions about me correctly.');
+    aboutMeElement.textContent = ('About Me: ' + score + '/5');
   }
 
   if (confirm('The next game we can play is a number guessing game. Try it?')) {
+    console.log('User wants to play Number Guessing');
     guessNumber();
-    guessElement.textContent = ('-You guessed my random number in ' + counter + ' attempts.');
+    guessGameElement.textContent = ('Number Guesser: ' + counter + ' attempts');
   }
 
   if(confirm('The last game we can play is a JavaScript quiz. Want to play?')) {
+    console.log('User wants to play JS Quiz');
     jsQuiz();
-    dataTypeElement.textContent = ('-You guessed ' + correctAnswers.length + ' out of 6 JavaScript primitive data types.');
+    jsQuizElement.textContent = ('JS Quiz: ' + correctAnswers.length + '/6');
   }
 
 } else {

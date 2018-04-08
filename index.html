@@ -1,43 +1,71 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>About Me</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-  </head>
+  </head> 
   <body>
-    <h1>About Me.</h1>
-    <ul id="resultList">
-      <li id="quizResults"></li>
-      <li id="guessGameResults"></li>
-      <li id="dataTypeResults"></li>
-    </ul>
+
+    <header>
+      <div id="rectangle"><h1>About Me.</h1></div>
+      <div id="splashGreeting">Hit refresh to get started</div>
+      <ul id="resultList">
+        <li id="aboutMeResults"></li>
+        <li id="guessGameResults"></li>
+        <li id="jsQuizResults"></li>
+      </ul>
+    </header>
+
+
+    <blockquote id="quoteBlock" cite="https://" >
+      <p><span class="icon">&#10077;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor vel augue consectetur euismod. Quisque lobortis sit amet mi at scelerisque. Phasellus posuere, orci id sollicitudin posuere, erat lacus semper ipsum, sit amet molestie turpis enim nec mi..<span id="credit"> -Who Said It</span><span class="icon">&#10078;</span></p>
+    </blockquote>
+
     <div class="row">
+
       <div class="column">
-        <div class='rectangle'></div>
-        <span id="results">Hit refresh to get started</span>
-        <div class='rectangle'></div>
-        <span id="movies">My Favorite Movies</span>
         <ol id="movieList">
-          <li>Rogue One: A Star Wars Story (2016)</li>
-          <li>The Martian (2015)</li>
-          <li>Gattaca (1997)</li>
-          <li>Passengers (2016)</li>
-          <li>The Prestige (2006)</li>
-          <li>The Great Raid (2005)</li>
-          <li>Children of Men (2006)</li>
-          <li>The Royal Tenenbaums (2001)</li>
-          <li>Inception (2010)</li>
-          <li>The Revenent (2015)</li>
+          <div id="movieHeader">Favorite Movies</div>
+          <li><a href="http://www.imdb.com/title/tt3748528/?ref_=fn_al_tt_1" target="_blank">
+            Rogue One: A Star Wars Story</a> (2016)</li>
+          <li><a href="http://www.imdb.com/title/tt3659388/?ref_=nv_sr_1" target="_blank">
+            The Martian</a> (2015)</li>
+          <li><a href="http://www.imdb.com/title/tt0119177/?ref_=nv_sr_1" target="_blank">
+            Gattaca</a> (1997)</li>
+          <li> <a href="http://www.imdb.com/title/tt1355644/?ref_=nv_sr_1" target="_blank">
+            Passengers</a> (2016)</li>
+          <li> <a href="http://www.imdb.com/title/tt0482571/?ref_=nv_sr_1" target="_blank">
+            The Prestige</a> (2006)</li>
+          <li> <a href="http://www.imdb.com/title/tt0326905/?ref_=nv_sr_1" target="_blank">
+            The Great Raid</a> (2005)</li>
+          <li> <a href="http://www.imdb.com/title/tt0206634/?ref_=nv_sr_1" target="_blank">
+            Children of Men</a> (2006)</li>
+          <li> <a href="http://www.imdb.com/title/tt0265666/?ref_=nv_sr_1" target="_blank">
+            The Royal Tenenbaums</a> (2001)</li>
+          <li> <a href="http://www.imdb.com/title/tt1375666/?ref_=nv_sr_1" target="_blank">
+            Inception</a> (2010)</li>
+          <li> <a href="http://www.imdb.com/title/tt1663202/?ref_=nv_sr_1" target="_blank">
+            The Revenent</a> (2015)</li>
         </ol>
       </div>
+
       <div class="column">
-        <img id="profPic" alt="My wife, my dog, and I" src="img/profPic.jpg"></img>
-        <span class="imgDesc">The wife, the pup, and I.</span>
-        <span class="imgDesc">Transplants to beautiful</span>
-        <span class="imgDesc">Seattle, Washington.</span>
+        <figure>
+          <img id="splashPic" alt="My wife Steph, my pup Lily, and I." src="img/profPic.jpg" />
+          <br />
+          <figcaption>My wife, my pup, and I.</figcaption>
+        </figure>
       </div>
     </div>
+
+    <p id="closingParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fringilla turpis vitae commodo porttitor. Pellentesque blandit, sem sit amet rutrum facilisis, lorem quam aliquam ipsum, in dignissim lacus ipsum in ex. Donec tincidunt nisi quis turpis mollis, id rutrum elit ornare. Pellentesque tempus, augue vel malesuada pellentesque, urna nibh tempus tellus, a eleifend dolor sapien non dui. Proin elementum dolor eu lorem tempus finibus. Aliquam suscipit ipsum nisi, id condimentum arcu vulputate sit amet. Quisque quam eros, fringilla ac massa non, sagittis congue elit. Curabitur cursus ultrices quam, vel tempor lectus faucibus vel. Suspendisse turpis ante, tempor nec placerat at, fermentum sed tellus. Quisque quis pulvinar tortor, eu ornare erat. Nulla non efficitur risus.</p>
+
+    <footer>
+      <p>Nathan Aurich - <a href="mailto:nateaurich@gmail.com">Email</a> - <a href="https://github.com/NateA275">GitHub</a> - <a href="https://www.linkedin.com/in/nathan-aurich-144b88160/">Linkedin</a> </p>
+    </footer>
+
   </body>
   <script src="js/app.js"></script>
 </html>
