@@ -45,37 +45,53 @@ ul > li {
 }
 
 blockquote {
-  width:39em;
+  max-width: 39em;
+  margin: auto;
+  margin-top: 3em;
+}
+
+#quote {
+  text-indent: 3em;
+  text-align: center;
+  max-width:39em;
   border: 1px solid rgb(229, 229, 229);
   margin: auto;
   padding: 1em;
+  padding-bottom: 3em;
 }
 
 .icon {
-  display: relative;
-  font-size: 4em;
-  line-height: 1em;
-  opacity: .4;
+  font-size: 5em;
+  line-height: 0em;
+  opacity: .2;
+  width: .7em;
 }
 
+#openQuote {
+  position: relative;
+  left: .5em;;
+  top: .2em;
+}
+
+#endQuote {
+  position: relative;
+  left: 7em;
+  bottom: .2em;
+} 
+
 #credit {
-  margin: auto;
-  padding-left: 4em;
+  text-align: center;
+  min-width: 8em;
+  position: relative;
+  bottom: 1.3em;
+  left: 3em;
   font-size: 2em;
   opacity: .4;
-  margin-left: 7em;
-  line-height: -.6em;
 }
 
 #movieHeader {
-  font-size: 1.7em;
-  opacity: .4;
-}
-
-li {
-  font-size: .75em;
-  margin: .25em;
-  text-align: left;
+  font-size: 1.8em;
+  opacity: .5;
 }
 
 ol {
@@ -85,6 +101,12 @@ ol {
   border: 1px solid rgb(229, 229, 229);
   margin: 1em;
   padding: 1em 1em 1em 2em;
+}
+
+li {
+  font-size: .75em;
+  margin: .25em;
+  text-align: left;
 }
 
 .row {
@@ -106,9 +128,8 @@ figure {
 }
 
 #splashPic {
-  border-radius: .5em;
+  border-radius: .8em;
   padding: .2em;
-  /* border: 1px solid rgb(229, 229, 229); */
 }
 
 figcaption {
@@ -118,8 +139,9 @@ figcaption {
 }
 
 #closingParagraph {
+  text-align: justify;
   text-indent: 3em;
-  width:30em;
+  max-width:30em;
   border: 1px solid rgb(229, 229, 229);
   margin: auto;
   padding: 1em;
@@ -130,4 +152,5 @@ footer {
   padding: 1em;
   font-size: .8em;
   text-align: center;
+  line-height: 1.3em;
 }
