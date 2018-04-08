@@ -1,8 +1,8 @@
 'use strict';
 
 /**************************************
- * Variables
- *************************************/
+* Variables
+*************************************/
 var response; //Contains latest user response
 var userName; //Gets user name
 var score = 0; //Gets score of Yes-or-No game
@@ -20,6 +20,7 @@ var introElement = document.getElementById('results');
 var quizElement = document.getElementById('quizResults');
 var guessElement = document.getElementById('guessGameResults');
 var dataTypeElement = document.getElementById('dataTypeResults');
+
 
 /**************************************
 * Main Function
@@ -48,6 +49,7 @@ if(confirm('Hello and welcome to my site!\n\nWhile here, you can learn a little 
 } else {
   alert('Ok, just hit refresh if you want to try them out!.');
 }
+
 
 /**************************************
 * About Me Quiz
@@ -138,9 +140,10 @@ function guessAboutMe() {
   console.log('About me quiz: ' + score + '/5');
 }
 
+
 /**************************************
- * Number Guessing Game
- *************************************/
+* Number Guessing Game
+*************************************/
 function guessNumber() {
   response = parseInt(prompt('Guess a random number between 1 and 10.'));
   counter++;
@@ -165,14 +168,15 @@ function guessNumber() {
   }
 }
 
+
 /*************************************
- *  JavaScript Quiz
- ************************************/
+*  JavaScript Quiz
+************************************/
 function jsQuiz() {
   alert('Do you think you can guess all six of the primitive data types in JavaScript? Give it a shot!');
 
-  do{
-    response = prompt('Enter a primitive type: \n' + attempts + '/6 attempts\n' + correctAnswers).toLowerCase();
+  do {
+    response = prompt('Enter a primitive data type: \n' + attempts + '/6 attempts\n' + correctAnswers).toLowerCase();
     if(dataTypes.includes(response)) {
       correctAnswers.push(' ' + response);
       dataTypes.splice(dataTypes.indexOf(response), 1);
@@ -184,7 +188,7 @@ function jsQuiz() {
   if(correctAnswers.length === MAX_ATTEMPTS) {
     alert('Nice! You got all six primitive types!');
   } else {
-    alert('You got ' + correctAnswers.length + ' correct.\nYou forgot about:\n' + dataTypes);
+    alert('You got ' + correctAnswers.length + ' correct.\nYou forgot about:\n' + dataTypes.join(', '));
   }
   console.log('JavaScript: ' + correctAnswers.lenght + '/6');
 }
