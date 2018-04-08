@@ -29,7 +29,7 @@ if(confirm('Hello and welcome to my site!\n\nWhile here, you can learn a little 
 
   userName = prompt('Good choice. First, what is your name?');
   console.log('User: ' + userName);
-  greetingElement.textContent = ('Thanks for playing, ' + userName);
+  greetingElement.textContent = (' :: ' + userName + ' :: ');
 
   if (confirm(userName + ', the first game I have to show you is a guessing game about me! Want to play?')) {
     console.log('User wants to play About Me');
