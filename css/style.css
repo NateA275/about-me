@@ -8,7 +8,7 @@
 
 body {
   margin-top: 0;
-  background-image: linear-gradient(to bottom, rgba(250, 195, 124, 0.6) 0%,rgba(186, 210, 233, .1) 100%), url("../img/tree-line.png");
+  background-image: linear-gradient(to bottom, rgba(245, 152, 47, 0.6) 0%,rgba(105, 158, 236, 0.4) 100%), url("../img/tree-line.png");
   background-size: 100%;
   background-attachment: fixed;
   background-position: 100% 100%; 
@@ -64,54 +64,24 @@ ul {
   list-style-type: square;
 }
 
-
-blockquote {
-  background: transparent;
+#introParagraph {
   max-width: 39em;
+  background: transparent;
   margin: auto;
   margin-top: 4em;
 }
 
-#quote {
+#intro {
+  line-height: 1.2em;
   background-color: rgba(255, 255, 255, 0.6);
   max-width:39em;
   text-indent: 3em;
   text-align: center;
-  padding: 1em;
+  padding: 1em;;
   padding-bottom: 3em;
   border: 1px solid rgb(94, 94, 94);
   border-radius: .2em;
   margin: auto;
-}
-
-.icon {
-  width: .7em;
-  font-size: 5em;
-  line-height: 0em;
-  opacity: .2;
-}
-
-#openQuote {
-  position: relative;
-  left: .5em;;
-  top: .2em;
-}
-
-#endQuote {
-  position: relative;
-  left: 7em;
-  bottom: .2em;
-} 
-
-#credit {
-  background-color: transparent;
-  font-size: 2em;
-  opacity: .4;
-  min-width: 8em;
-  text-align: center;
-  position: relative;
-  bottom: 1.4em;
-  left: 3em;
 }
 
 #movieHeader {
@@ -174,15 +144,55 @@ figcaption {
   text-align: center;
 }
 
-#closingParagraph {
+#closingQuotation {
+  max-width: 39em;
+  background: transparent;
+  margin: auto;
+  margin-top: 1em;
+}
+
+#quote {
+  line-height: 1.2em;
   background-color: rgba(255, 255, 255, 0.6);
-  max-width: 30em;
+  max-width:39em;
   text-indent: 3em;
-  text-align: justify;
+  text-align: center;
   padding: 1em;
+  padding-bottom: 3em;
   border: 1px solid rgb(94, 94, 94);
   border-radius: .2em;
   margin: auto;
+}
+
+.openQuote {
+  position: relative;
+  left: .5em;;
+  top: .2em;
+  width: .7em;
+  font-size: 5em;
+  line-height: 0em;
+  opacity: .2;
+}
+
+.endQuote {
+  position: relative;
+  left: 7em;
+  bottom: .2em;
+  width: .7em;
+  font-size: 5em;
+  line-height: 0em;
+  opacity: .2;
+} 
+
+#credit {
+  background-color: transparent;
+  font-size: 2.5em;
+  opacity: .4;
+  min-width: 8em;
+  text-align: center;
+  position: relative;
+  bottom: 1.4em;
+  left: 3em;
 }
 
 footer {
