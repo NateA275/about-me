@@ -8,12 +8,10 @@
 
 body {
   margin-top: 0;
-  /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%,rgba(0,0,0,0.9) 100%), url("../img/treeline.png"); */
-
-  background-image: url("../img/rainier.jpg");
-  /* background-size: auto; */
+  background-image: linear-gradient(to bottom, rgba(113, 163, 238, .6) 0%,rgba(186, 210, 233, .1) 100%), url("../img/tree-line.png");
+  background-size: 100%;
   background-attachment: fixed;
-  background-position: 50% 100%; 
+  background-position: 100% 100%; 
   background-repeat: no-repeat;
 }
 
@@ -33,7 +31,7 @@ h1 {
 }
 
 #rectangle {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.6);
   display: inline-block;
   width: 15em;
   padding: .8em;
@@ -44,22 +42,28 @@ h1 {
   margin-right: none;
 }
 
-ul {
-  background-color: transparent;
-  font-size: .8em;
-  float: right;
-  list-style-type: square;
+#ui {
   margin-top: 1em;
+  margin-right: 2em;
+  float: right;
+  background: transparent;
 }
 
 #splashGreeting {
+  margin-bottom: .2em;
   background-color: transparent;
   font-size: .8em;
-  text-align: right;
-  padding: .2em;
-  padding-right: 3em;
-  margin: .2em;
+  text-align: center;
 }
+
+ul {
+  display: block;
+  float: right;
+  background-color: transparent;
+  font-size: .8em;
+  list-style-type: square;
+}
+
 
 blockquote {
   background: transparent;
@@ -69,7 +73,7 @@ blockquote {
 }
 
 #quote {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.6);
   max-width:39em;
   text-indent: 3em;
   text-align: center;
@@ -111,13 +115,13 @@ blockquote {
 }
 
 #movieHeader {
-  color: rgb(94, 94, 94);
   background-color: transparent;
+  opacity: .4;
   font-size: 1.8em;
 }
 
 ol {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.6);
   width: 17em;
   line-height:2.2;
   list-style-type: decimal;
@@ -148,9 +152,9 @@ li {
 }
 
 figure {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.6);
   vertical-align: middle;
-  padding: 2em 1em 2.6em 1em;
+  padding: 2em 1em 1.5em 1em;
   border: 1px solid rgb(94, 94, 94);
   border-radius: .2em;
   margin: 1em;
@@ -162,14 +166,16 @@ figure {
 }
 
 figcaption {  
-  font-size: .6em;
+  margin: auto;
+  max-width: 18em;
+  font-size: .8em;
   background: transparent;
   letter-spacing: 1px;
   text-align: center;
 }
 
 #closingParagraph {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.6);
   max-width: 30em;
   text-indent: 3em;
   text-align: justify;
@@ -182,7 +188,7 @@ figcaption {
 footer {
   background-color: transparent;
   font-size: .8em;
-  line-height: 1.3em;
+  line-height: 1.2em;
   text-align: center;
   padding: 1em;
   margin-top: 8em;
@@ -195,4 +201,8 @@ footer p {
 
  a {
   background-color: transparent;
+}
+
+p a {
+  color: white;
 }
