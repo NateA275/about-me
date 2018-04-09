@@ -8,7 +8,7 @@
 
 body {
   margin-top: 0;
-  background-image: linear-gradient(to bottom, rgba(113, 163, 238, .6) 0%,rgba(186, 210, 233, .1) 100%), url("../img/tree-line.png");
+  background-image: linear-gradient(to bottom, rgba(250, 195, 124, 0.6) 0%,rgba(186, 210, 233, .1) 100%), url("../img/tree-line.png");
   background-size: 100%;
   background-attachment: fixed;
   background-position: 100% 100%; 
@@ -133,7 +133,7 @@ ol {
 
 li {
   background-color: transparent;
-  font-size: .75em;
+  font-size: .8em;
   text-align: left;
   margin: .25em;
 }
@@ -154,7 +154,7 @@ li {
 figure {
   background-color: rgba(255, 255, 255, 0.6);
   vertical-align: middle;
-  padding: 2em 1em 1.5em 1em;
+  padding: 2em 1em 2.5em 1em;
   border: 1px solid rgb(94, 94, 94);
   border-radius: .2em;
   margin: 1em;
